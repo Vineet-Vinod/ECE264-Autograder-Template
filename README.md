@@ -107,3 +107,5 @@ The autograder may take a second (or minute) (or two) to build.
 - Replace `subprocess.run(...)` calls, which are synchronous, with their async counterparts in the asyncio library. This gives us more fine-grained control over program timeout (better than Gradescope's 10 minute minimum).
 ### April 30, 2025
 - Add logic in `test_memory.py` to catch memory errors and deduct points (previously, if there were memory errors but no memory leaks, the submission would be awarded full points).
+### August 02, 2025
+- Add functionality to pass in program args through stdin.
