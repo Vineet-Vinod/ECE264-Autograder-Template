@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# MODIFY LINE 3 ONLY
+STUDENT_C_FILE="student_filename.c"
+
+# Copy student's submission to the source directory
+cp /autograder/submission/$STUDENT_C_FILE /autograder/source/$STUDENT_C_FILE
+
+cd /autograder/source
+python3 run_tests.py
