@@ -1,7 +1,7 @@
 from unittest import TestCase
 from gradescope_utils.autograder_utils.decorators import weight
 from gradescope_utils.autograder_utils.files import check_submitted_files
-from weights import TEST_FILES
+from constants import TEST_FILES
 
 
 def files_submitted():

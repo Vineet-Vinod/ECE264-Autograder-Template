@@ -2,7 +2,7 @@ from unittest import TestCase
 from gradescope_utils.autograder_utils.decorators import weight
 import subprocess
 import os
-from weights import TEST_GCC
+from constants import TEST_GCC
 from test_files import files_submitted
 
 

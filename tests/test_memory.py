@@ -27,8 +27,14 @@ class test_memory(TestCase):
         async def memory_check():
             nonlocal MEMORY_CMD, args
             process = await asyncio.create_subprocess_exec(MEMORY_CMD, *args, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE)
+            # process = await asyncio.create_subprocess_exec(MEMORY_CMD, *args, stdin=asyncio.subprocess.PIPE, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE) # Alternate if inputs are passed in through stdin
 
             try:
+                # Inputs through stdin alternative
+                # process.stdin.write(f"stdin_inputs".encode())
+                # await process.stdin.drain()
+                # process.stdin.close()
+
                 await asyncio.wait_for(process.wait(), 2*TIMEOUT)
             except asyncio.TimeoutError:
                 print("Program Timed Out!")

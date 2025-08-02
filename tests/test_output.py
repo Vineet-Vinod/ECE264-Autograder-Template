@@ -28,8 +28,14 @@ async def test(args):
 
     command = f"./{EXEC}"
     process = await asyncio.create_subprocess_exec(command, *args, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE)
+    # process = await asyncio.create_subprocess_exec(command, stdin=asyncio.subprocess.PIPE, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE) # Alternate if inputs are passed in through stdin
 
     try:
+        # Inputs through stdin
+        # process.stdin.write(f"stdin_args".encode())
+        # await process.stdin.drain()
+        # process.stdin.close()
+
         await asyncio.wait_for(process.wait(), TIMEOUT)
         assert(process.returncode == 0)
     except asyncio.TimeoutError:
